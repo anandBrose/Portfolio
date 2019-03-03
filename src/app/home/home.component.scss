@@ -1,8 +1,9 @@
-$primaryColor: #05a985;
-$darkColor: #596b67;
+$primaryColor: #00f5bf;
+$primaryDarkColor: #038266;
+$textColor: #FFF;
 .canvas-wrapper{
   background-image: linear-gradient(#ffffff, #387970);
-  // background-image: linear-gradient(#8b8c8c, #113a34, #17403a);
+  background-image: linear-gradient(#ffffff, #1d695e, #17403a);
   background-color: black;
   width: 100vw;
   height: 100vh;
@@ -13,11 +14,11 @@ $darkColor: #596b67;
     width: 100%;
     height: 100%;
     position: absolute;
-    // opacity: 0.15;
+    overflow: hidden;
     z-index: 0;
   }
   .info{
-    color:$darkColor;
+    color:$textColor;
     z-index: 1;
     text-align: center;
     label{
@@ -38,8 +39,8 @@ $darkColor: #596b67;
     .view-work-button{
       background: none;
       background-color: transparent;
-      border: 2px solid $darkColor;
-      color: $darkColor;
+      border: 2px solid $textColor;
+      color: $textColor;
       margin-top: 20px;
       padding: 15px 20px;
       font-size: 1.1em;
@@ -48,7 +49,7 @@ $darkColor: #596b67;
       transition: 0.3s all;
       cursor: pointer;
       &:hover{
-        background-color: $primaryColor;
+        background-color: $primaryDarkColor;
         color: white;
         border-color: transparent;
         svg {
@@ -60,12 +61,12 @@ $darkColor: #596b67;
       }
       svg {
         height: 1em;
-        width: auto;
+        width: 1em;
         vertical-align: sub;
-        margin-left: 10px;
         transition: 0.3s all;
         #arrow {
           transition: 0.3s all;
+          fill: rgb(255,255,255);
         }
       }
     }
