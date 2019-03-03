@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+  margin: 0;
+  font-family: 'Montserrat Regular';
+}
+@font-face {
+  font-family: "Montserrat ExtraLight";
+  src: url("assets/fonts/Montserrat-ExtraLight.ttf");
+}
+@font-face {
+  font-family: "Montserrat Light";
+  src: url("assets/fonts/Montserrat-Light.ttf");
+}
+@font-face {
+  font-family: "Montserrat Thin";
+  src: url("assets/fonts/Montserrat-Thin.ttf");
+}
+@font-face {
+  font-family: "Montserrat Regular";
+  src: url("assets/fonts/Montserrat-Regular.ttf");
+}
+@font-face {
+  font-family: "Montserrat Medium";
+  src: url("assets/fonts/Montserrat-Medium.ttf");
+}
+button{
+  outline: none;
+}
