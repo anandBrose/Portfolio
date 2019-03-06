@@ -9,7 +9,7 @@ export class HomeGraphicsComponent implements OnInit, AfterViewInit {
   segmentWidth: number;
   segmentHeight: number;
   animateDistance = 80;
-  animateSpeed = 15;
+  animateSpeed = 10;
   constructor() { }
   particleCount = 260;
   particleSize = 5;
@@ -30,14 +30,14 @@ export class HomeGraphicsComponent implements OnInit, AfterViewInit {
       x: canvasEl.width / 2,
       y: canvasEl.height / 2
     };
-    this.segmentWidth = 125;//this.canvasWidth / 15;
-    this.segmentHeight = 55;//this.canvasWidth / 15;
+    this.segmentWidth = 90;//this.canvasWidth / 15;
+    this.segmentHeight = 90;//this.canvasWidth / 15;
     canvasEl.height = this.canvasHeight = canvasEl.parentElement.offsetHeight;
     this.startDrawing();
     this.addEvents();
   }
   addEvents(): any {
-    this.canvas.nativeElement.parentElement.parentElement.addEventListener('mousemove', (evt: Event) => {
+    document.body.addEventListener('mousemove', (evt: Event) => {
       this.mousePosition = this.getMousePos(this.canvas.nativeElement, evt);
     }, false);
   }
@@ -81,7 +81,7 @@ export class HomeGraphicsComponent implements OnInit, AfterViewInit {
       pair = pair.sort((a: any, b: any) => {
         return a.distance - b.distance;
       });
-      this.particles[i].closest = pair.splice(0, 5);
+      this.particles[i].closest = pair.splice(0, 4);
     }
     return pairs;
   }
@@ -94,7 +94,7 @@ export class HomeGraphicsComponent implements OnInit, AfterViewInit {
   }
 
   animateParticle(particle: Particle, deltaTime: number) {
-    if (this.distanceBetweenParticles(particle, particle.to) < 2) {
+    if (this.distanceBetweenParticles(particle, particle.to) < 1) {
       particle.to = {
         x: particle.orginX + ((Math.random() - 0.5) * this.animateDistance),
         y: particle.orginY + ((Math.random() - 0.5) * this.animateDistance)
@@ -114,13 +114,15 @@ export class HomeGraphicsComponent implements OnInit, AfterViewInit {
       this.animateParticle(particle, delta * 0.001 * this.animateSpeed);
       const distance = this.distanceBetweenParticles(this.mousePosition, particle);
       if (distance > 200) {
-        opacity = 0.05;
+        opacity = 0.03;
+      } else if (distance > 150) {
+        opacity = 0.2;
       } else if (distance > 100) {
-        opacity = 0.3;
+        opacity = 0.4;
       } else if (distance > 50) {
-        opacity = 0.6;
+        opacity = 0.7;
       } else {
-        opacity = 0.9;
+        opacity = 0.7;
       }
       this.drawParticle(particle, opacity);
       for (const pair of particle.closest) {
@@ -138,8 +140,8 @@ export class HomeGraphicsComponent implements OnInit, AfterViewInit {
       x,
       y,
       to: {
-        x: x + (Math.random() * this.animateDistance),
-        y: y + (Math.random() * this.animateDistance)
+        x: x + ((Math.random() - 0.5) * this.animateDistance),
+        y: y + ((Math.random() - 0.5) * this.animateDistance)
       },
       size: Math.random() * this.particleSize + 1
     };

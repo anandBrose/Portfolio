@@ -1,0 +1,79 @@
+@import "../../variable.scss";
+
+.wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .title {
+    margin-bottom: 50px;
+    border-bottom: 4px solid $grey;
+    font-family: Montserrat Medium;
+    padding-bottom: 13px;
+    font-size: 2.3em;
+    color: $primaryDarkColor;
+  }
+  .card-list {
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    .card {
+      flex: 1;
+      max-width: 250px;
+      max-height: 250px;
+      height: 100%;
+      background-color: #ccc;
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: #FFFFFF;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition: 0.3s all;
+        .info {
+          text-align: center;
+          position: relative;
+          top: -140px;
+          transition: 0.3s all;
+          h4 {
+            margin-bottom: 4px;
+            font-family: Montserrat Medium;
+          }
+          p {
+            margin-top: 4px;
+            font-size: 0.9em;
+          }
+        }
+        a {
+          position: relative;
+          bottom: -100px;
+          transition: 0.3s all;
+          border: 1px solid $primaryDarkColor;
+          padding: 12px;
+          cursor: pointer;
+          border-radius: 4px;
+        }
+      }
+      &:hover {
+        .container {
+          opacity: 1;
+          .info {
+            top: 0;
+          }
+          a {
+            bottom: -30px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+@import "../../variable.scss";
+.info{
+  height: 100%;
+  color:$textColor;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  label{
+    font-family: Montserrat Medium;
+    display: block;
+    margin: 10px;
+    font-size: 2.2em;
+    .highlight {
+      color:$primaryColor;
+    }
+  }
+  .sub-title{
+    font-size: 1.7em;
+  }
+  p {
+    max-width: 700px;
+    font-family: Montserrat Medium;
+    line-height: 1.6em;
+    font-size: 0.8em;
+  }
+  .view-work-button {
+    background: none;
+    border: 2px solid $textColor;
+    color: $textColor;
+    margin-top: 20px;
+    padding: 15px 20px;
+    font-size: 1.1em;
+    line-height: 1em;
+    vertical-align: bottom;
+    transition: 0.3s all;
+    cursor: pointer;
+    &:hover{
+      background-color: $primaryDarkColorTransparent;
+      color: white;
+      border-color: transparent;
+      svg {
+        transform: rotateZ(90deg);
+        #arrow {
+          fill: rgb(255,255,255);
+        }
+      }
+    }
+    svg {
+      height: 1em;
+      width: 1em;
+      vertical-align: sub;
+      transition: 0.3s all;
+      #arrow {
+        transition: 0.3s all;
+        fill: rgb(255,255,255);
+      }
+    }
+  }
+}

@@ -1,78 +1,31 @@
-$primaryColor: #00f5bf;
-$primaryDarkColor: #038266;
-$primaryDarkColorTransparent: #038266bb;
-$textColor: #FFF;
-.canvas-wrapper{
-  background-image: linear-gradient(#ffffff, #387970);
-  background-image: linear-gradient(#ffffff, #1d695e, #17403a);
-  background-color: black;
+.content-wrapper{
   width: 100vw;
   height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  app-home-graphics{
+  overflow: scroll;
+  scroll-behavior: smooth;
+  background-color: #FFFFFF;
+  position: fixed;
+  .canvas-wrapper{
+    // background-image: linear-gradient(#ffffff, #387970);
+    // background-image: linear-gradient(#ffffff, #1d695e, #17403a);
+    background-image: linear-gradient(#ffffff, #7ba29d, #306f65, #17403a);
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: -1;
+    app-home-graphics{
+      display: inline-block;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+    }
+  }
+  .segment {
+    // position: absolute;
     width: 100%;
     height: 100%;
-    position: absolute;
-    overflow: hidden;
-    z-index: 0;
-  }
-  .info{
-    color:$textColor;
-    z-index: 1;
-    text-align: center;
-    label{
-      font-family: Montserrat Medium;
-      display: block;
-      margin: 10px;
-      font-size: 2.2em;
-      .highlight {
-        color:$primaryColor;
-      }
-    }
-    .sub-title{
-      font-size: 1.8em;
-    }
-    p {
-      max-width: 700px;
-      font-family: Montserrat Medium;
-      line-height: 1.6em;
-      font-size: 0.8em;
-    }
-    .view-work-button{
-      background: none;
-      background-color: transparent;
-      border: 2px solid $textColor;
-      color: $textColor;
-      margin-top: 20px;
-      padding: 15px 20px;
-      font-size: 1.1em;
-      line-height: 1em;
-      vertical-align: bottom;
-      transition: 0.3s all;
-      cursor: pointer;
-      &:hover{
-        background-color: $primaryDarkColorTransparent;
-        color: white;
-        border-color: transparent;
-        svg {
-          transform: rotateZ(90deg);
-          #arrow {
-            fill: rgb(255,255,255);
-          }
-        }
-      }
-      svg {
-        height: 1em;
-        width: 1em;
-        vertical-align: sub;
-        transition: 0.3s all;
-        #arrow {
-          transition: 0.3s all;
-          fill: rgb(255,255,255);
-        }
-      }
-    }
+    top: 0;
+    transition: 0.7s all ease-in-out;
   }
 }
